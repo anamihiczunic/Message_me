@@ -9,3 +9,10 @@
 
 User.create(username: "Ana", password: "banana")
 User.create(username: "Kiki", password: "bankiki")
+User.create(username: "Robi", password: "banrobi")
+User.create(username: "Toni", password: "bantoni")
+
+Message.create(body: "A sad jedna prava poruka", user: User.first)
+Message.create(body: "A sad jedna losa poruka", user: User.last)
+Message.create(body: "A sad jedna  poruka", user_id: 3)
+Message.create(body: "A sad jedna zelena poruka", user_id: 4)
