@@ -8,7 +8,8 @@ class MessagesController < ApplicationController
       # ActionCable.server.broadcast "chatroom_channel"
       # takes a hash that will be received by chatroom.coffe, received: (data)
       ActionCable.server.broadcast "chatroom_channel",
-                                   foo: message.body
+                                   mod_message: message_render(message)
+
     end
   end
 
@@ -16,5 +17,9 @@ class MessagesController < ApplicationController
 
   def message_params
     params.require(:message).permit(:body)
+  end
+
+  def message_render(message)
+    render(partial: 'message', locals: {message: message})
   end
 end
