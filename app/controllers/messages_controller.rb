@@ -5,7 +5,10 @@ class MessagesController < ApplicationController
 
     message = current_user.messages.build(message_params)
     if message.save
-      redirect_to root_path
+      # ActionCable.server.broadcast "chatroom_channel"
+      # takes a hash that will be received by chatroom.coffe, received: (data)
+      ActionCable.server.broadcast "chatroom_channel",
+                                   foo: message.body
     end
   end
 
