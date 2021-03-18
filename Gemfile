@@ -32,6 +32,7 @@ gem 'jquery-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'hirb'
+gem 'redis'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -56,6 +57,7 @@ end
 
 group :production do
   gem 'pg'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
